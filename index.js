@@ -9,7 +9,6 @@ const bot = new TelegramBot(token, {
 });
 
 bot.on('message', (msg) => {
-  const chat_id = msg.chat.id;
   console.log(msg);
-  bot.sendMessage(chat_id, msg.text, {parse_mode: 'MarkdownV2'});
+  bot.sendMessage(msg.chat.id, msg.text, {parse_mode: 'MarkdownV2'});
 });
